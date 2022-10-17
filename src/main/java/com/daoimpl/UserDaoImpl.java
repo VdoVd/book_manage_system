@@ -43,8 +43,11 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public User searchUserForLogin(String username, String password, String usertype) throws SQLException {
-        return null;
-    }
+        System.out.println(username+"---"+password+"-----"+usertype);
+        QueryRunner runner = new QueryRunner(JDBCUtil.getDataSource());
+        User user = runner.query("select * from users where username=? and passwords=? and usertype = ?", new BeanHandler<User>(User.class),username,password,usertype);
+        System.out.println(user);
+        return runner.query("select * from users where username=? and passwords=? and usertype = ?", new BeanHandler<User>(User.class),username,password,usertype);    }
 
     @Override
     public List<User> searchUser(String username, String usertype) throws SQLException {

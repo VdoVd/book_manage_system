@@ -8,11 +8,6 @@
     <artifactId>BookManageSystem</artifactId>
     <version>1.0-SNAPSHOT</version>
     <dependencies>
-        <dependency>
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>tomcat-servlet-api</artifactId>
-            <version>9.0.58</version>
-        </dependency>
     </dependencies>
 
     <properties>
